@@ -12,8 +12,12 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -68,7 +72,7 @@ INSTALLED_APPS = [
 
 # Django Suit configuration
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'Python Learning',
+    'ADMIN_NAME': 'ASI-D HELPER',
     'SEARCH_URL': '/admin/blog/post/',
     'MENU': (
         {'app': 'blog', 'label': 'Blog', 'models': ('post', 'tag', 'page', 'author', 'gallery', 'visitor'),
@@ -134,11 +138,11 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'database_nme',
-        'USER': 'database_user',
-        'PASSWORD': 'password_user',
+        'NAME': 'myproject',
+        'USER': 'muhiza',
+        'PASSWORD': 'annemuhiza',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '',
     }
 }
 
@@ -176,14 +180,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/path/to/yourenv/blogproject/static',
 )
 
 STATIC_URL = '/static/'
 #STATIC_ROOT = '/path/to/yourenv/blogproject/static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/path/to/yourenv/blogproject/media'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_files", "media_root")
 
 # Editor Redactor
 import time
